@@ -745,9 +745,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: fd1b5968-8591-4309-9256-0cbd18ec1963
-  projectName: VRrhythmGame (2)
-  organizationId: e1b16057
+  cloudProjectId: 546aece7-a1c0-488a-a4e6-c81f0f843594
+  projectName: VRrhythmGame
+  organizationId: unity_ybjijyk8n5nizq
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
