@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: d755e68cd92c18147b4068496a88db4f
-timeCreated: 1439902595
-licenseType: Store
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - m_NormalMaterial: {fileID: 2100000, guid: 1331fff4b797e934f9dda03e8801d6e0, type: 2}
@@ -10,6 +9,8 @@ MonoImporter:
   - m_ClickedMaterial: {fileID: 2100000, guid: bb5b02dca4e40024a8985968dcbb168b, type: 2}
   - m_DoubleClickedMaterial: {fileID: 2100000, guid: 6c24bafebfdd8d5409c9b756aad7b191,
       type: 2}
+  - m_InteractiveItem: {instanceID: 0}
+  - m_Renderer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

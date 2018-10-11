@@ -21,7 +21,7 @@ public class ballCreateScript : MonoBehaviour
             // Instantiateの引数にPrefabを渡すことでインスタンスを生成する
             GameObject cube = Instantiate(cubePrefab) as GameObject;
             // ランダムな場所に配置する
-            cube.transform.position = new Vector3(Random.Range(-4, 4), Random.Range(-4, 4), Random.Range(20, 24));
+            cube.transform.position = new Vector3(Random.Range(-4, 4), Random.Range(-2, 2), Random.Range(20, 24));
 
         }
 
