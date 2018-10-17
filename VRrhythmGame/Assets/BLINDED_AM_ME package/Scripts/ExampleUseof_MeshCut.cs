@@ -13,6 +13,7 @@ public class ExampleUseof_MeshCut : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         GameObject victim = collision.gameObject;
 
         GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, capMaterial);
@@ -21,8 +22,8 @@ public class ExampleUseof_MeshCut : MonoBehaviour {
             pieces[1].AddComponent<Rigidbody>();
 
         Destroy(pieces[1], 1);
+        
         /*
-
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, transform.forward, out hit))
@@ -41,47 +42,47 @@ public class ExampleUseof_MeshCut : MonoBehaviour {
 
     void Update()
     {
+
+
+        /*
+    RaycastHit hit;
+
+    if (Physics.Raycast(transform.position, transform.forward, out hit))
+    {
+        GameObject victim = hit.collider.gameObject;
+
+        if (victim.tag != "Cylinder")
+        {
+            GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, capMaterial);
+
+            if (!pieces[1].GetComponent<Rigidbody>())
+                pieces[1].AddComponent<Rigidbody>();
+
+            Destroy(pieces[1], 1);
+
+        }
+
+    }
+    /*
+    if(){
         RaycastHit hit;
 
-
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
-        {
+        if(Physics.Raycast(transform.position, transform.forward, out hit)){
 
             GameObject victim = hit.collider.gameObject;
 
-            if (victim.tag != "Cylinder")
-            {
-                GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, capMaterial);
+            GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, capMaterial);
 
-                if (!pieces[1].GetComponent<Rigidbody>())
-                    pieces[1].AddComponent<Rigidbody>();
+            if(!pieces[1].GetComponent<Rigidbody>())
+                pieces[1].AddComponent<Rigidbody>();
 
-                Destroy(pieces[1], 1);
-
-            }
-
+            Destroy(pieces[1], 1);
         }
-        /*
-		if(){
-			RaycastHit hit;
 
-			if(Physics.Raycast(transform.position, transform.forward, out hit)){
-
-				GameObject victim = hit.collider.gameObject;
-
-				GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, capMaterial);
-
-				if(!pieces[1].GetComponent<Rigidbody>())
-					pieces[1].AddComponent<Rigidbody>();
-
-				Destroy(pieces[1], 1);
-			}
-
-		}*/
+    }*/
     }
 
-	void OnDrawGizmosSelected() {
+    void OnDrawGizmosSelected() {
 
 		Gizmos.color = Color.green;
 
