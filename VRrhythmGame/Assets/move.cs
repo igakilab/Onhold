@@ -7,6 +7,7 @@ public class move : MonoBehaviour {
 
     private float collisionTime;
     private Boolean hasCollision = false;
+    public Material capMaterial;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +18,7 @@ public class move : MonoBehaviour {
 	void Update () {
         if (hasCollision)
         {
-            transform.position -= new Vector3(0f, 3f * (this.collisionTime - Time.deltaTime), 6f * Time.deltaTime);
+            // transform.position -= new Vector3(0f, 6f * (this.collisionTime - Time.deltaTime), 6f * Time.deltaTime);
         } else
         {
             transform.position -= new Vector3(0f, 0f, 6f * Time.deltaTime);
@@ -30,11 +31,14 @@ public class move : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.tag == "Stick")
         {
             // transform.gameObject.AddComponent<Rigidbody>();
             this.collisionTime = Time.deltaTime;
             hasCollision = true;
+
+
         }
     }
 }
