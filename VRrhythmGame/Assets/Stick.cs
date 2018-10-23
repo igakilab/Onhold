@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Stick : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Stick : MonoBehaviour
     private Vector3 beforePos;
     //private AudioSource audioSource;
     //public AudioClip saber;
+
 
     void Start ()
     {
@@ -42,7 +44,7 @@ public class Stick : MonoBehaviour
 
         if (collision.gameObject.tag == "Cube")
         {
-            GameObject victim = collision.gameObject;
+            var victim = collision.gameObject;
             victim.GetComponent<Rigidbody>().useGravity = true;
 
             Vector3 before = transform.position;
@@ -95,11 +97,27 @@ public class Stick : MonoBehaviour
                         pos.y = 1.0f;
                     }
 
-                    comboText.GetComponent<TextMesh>().text = (Int32.Parse(comboText.GetComponent<TextMesh>().text) + 1).ToString();
-                    Double comboBonus = Int32.Parse(comboText.GetComponent<TextMesh>().text) > 5 ? Int32.Parse(comboText.GetComponent<TextMesh>().text) * 0.01 : 0;
-                    scoreText.GetComponent<TextMesh>().text = (Int32.Parse(scoreText.GetComponent<TextMesh>().text) + Math.Floor(100 * (1 + comboBonus))).ToString();
+                    var prefab = (GameObject)Resources.Load("PointText");
+                    var pointPos = new Vector3(victim.transform.position.x, victim.transform.position.y + 1, victim.transform.position.z);
 
-                    GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, center, pos, capMaterial);
+                    comboText.GetComponent<TextMesh>().text = (Int32.Parse(comboText.GetComponent<TextMesh>().text) + 1).ToString();
+                    var comboBonus = Int32.Parse(comboText.GetComponent<TextMesh>().text) > 5 ? Int32.Parse(comboText.GetComponent<TextMesh>().text) * 0.01 : 0;
+                    var point = Math.Floor(100 * (1 + comboBonus));
+
+                    // プレハブからインスタンスを生成
+                    var obj = Instantiate(prefab, pointPos, Quaternion.identity);
+
+                    obj.GetComponent<TextMesh>().text = point.ToString();
+
+                    scoreText.GetComponent<TextMesh>().text = (Int32.Parse(scoreText.GetComponent<TextMesh>().text) + point).ToString();
+                    scoreText.GetComponent<TextMesh>().color = Color.red;
+
+                    StartCoroutine(DelayMethod(0.3f, () =>
+                    {
+                        scoreText.GetComponent<TextMesh>().color = Color.white;
+                    }));
+
+                    var pieces = BLINDED_AM_ME.MeshCut.Cut(victim, center, pos, capMaterial);
                     // before
                     //GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, center, (transform.position - before) == new Vector3(0, 0, 0) ? transform.forward : pos, capMaterial);
 
@@ -112,9 +130,6 @@ public class Stick : MonoBehaviour
                 }
 
             }));
-
         }
-
-
     }
 }
