@@ -8,9 +8,10 @@ public class move : MonoBehaviour {
     private float collisionTime;
     private Boolean hasCollision = false;
     public Material capMaterial;
+    //public GameObject comboText;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -18,13 +19,14 @@ public class move : MonoBehaviour {
 	void Update () {
         if (hasCollision)
         {
-            // transform.position -= new Vector3(0f, 6f * (this.collisionTime - Time.deltaTime), 6f * Time.deltaTime);
+            transform.position -= new Vector3(-0.01f, 0f, 1f * Time.deltaTime);
         } else
         {
             transform.position -= new Vector3(0f, 0f, 6f * Time.deltaTime);
         }
-        if (transform.position.z <= -4)
+        if (transform.position.z <= 0)
         {
+            //comboText.GetComponent<TextMesh>().text = 0.ToString();
             Destroy(transform.gameObject);
         }
     }
