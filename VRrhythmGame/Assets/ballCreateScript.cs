@@ -189,6 +189,11 @@ public class ballCreateScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (count == 0)
+        {
+            PlayerPrefs.SetString("score", "0");
+            PlayerPrefs.SetString("combo", "0");
+        }
 
         timeElapsed += Time.deltaTime;
 

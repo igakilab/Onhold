@@ -101,6 +101,15 @@ public class Stick : MonoBehaviour
                     var pointPos = new Vector3(victim.transform.position.x, victim.transform.position.y + 1, victim.transform.position.z);
 
                     comboText.GetComponent<TextMesh>().text = (Int32.Parse(comboText.GetComponent<TextMesh>().text) + 1).ToString();
+
+                    if (PlayerPrefs.HasKey("combo"))
+                    {
+                        PlayerPrefs.SetString("combo", Math.Max(Int32.Parse(comboText.GetComponent<TextMesh>().text), Int32.Parse(PlayerPrefs.GetString("combo"))).ToString());
+
+                    } else
+                    {
+                        PlayerPrefs.SetString("combo", "1");
+                    }
                     var comboBonus = Int32.Parse(comboText.GetComponent<TextMesh>().text) > 5 ? Int32.Parse(comboText.GetComponent<TextMesh>().text) * 0.01 : 0;
                     var point = Math.Floor(100 * (1 + comboBonus));
 
@@ -112,7 +121,7 @@ public class Stick : MonoBehaviour
                     scoreText.GetComponent<TextMesh>().text = (Int32.Parse(scoreText.GetComponent<TextMesh>().text) + point).ToString();
                     scoreText.GetComponent<TextMesh>().color = Color.red;
 
-                    
+                    PlayerPrefs.SetString("score", scoreText.GetComponent<TextMesh>().text);
 
                     StartCoroutine(DelayMethod(0.3f, () =>
                     {
