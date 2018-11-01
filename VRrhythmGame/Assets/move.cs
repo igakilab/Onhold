@@ -22,7 +22,7 @@ public class move : MonoBehaviour {
             transform.position -= new Vector3(-0.01f, 0f, 1f * Time.deltaTime);
         } else
         {
-            transform.position -= new Vector3(0f, 0f, 11.7f * Time.deltaTime);
+            transform.position -= new Vector3(0f, 0f, 15f * Time.deltaTime);
         }
         if (transform.position.z <= 0)
         {
