@@ -112,6 +112,8 @@ public class Stick : MonoBehaviour
                     scoreText.GetComponent<TextMesh>().text = (Int32.Parse(scoreText.GetComponent<TextMesh>().text) + point).ToString();
                     scoreText.GetComponent<TextMesh>().color = Color.red;
 
+                    
+
                     StartCoroutine(DelayMethod(0.3f, () =>
                     {
                         scoreText.GetComponent<TextMesh>().color = Color.white;
