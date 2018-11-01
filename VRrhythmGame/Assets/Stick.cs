@@ -14,12 +14,12 @@ public class Stick : MonoBehaviour
 
     private Vector3 beforePos;
     //private AudioSource audioSource;
-    private AudioSource sound01;
+    //private AudioSource sound01;
 
 
     void Start ()
     {
-        sound01 = GetComponent<AudioSource>();
+        //sound01 = GetComponent<AudioSource>();
         //audioSource = gameObject.GetComponent<AudioSource>();
         beforePos = transform.position;
     }
@@ -59,7 +59,7 @@ public class Stick : MonoBehaviour
 
                 if (pos != new Vector3(0, 0, 0))
                 {
-                    sound01.PlayOneShot(sound01.clip);
+                    //sound01.PlayOneShot(sound01.clip);
 
                     var center = collision.gameObject.GetComponent<Renderer>().bounds.center;
 
