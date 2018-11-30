@@ -22,10 +22,10 @@
 ### 1-4. Unityにログイン  
 アカウント作成後、ログインするとLicenseManagement選択画面が表示されるのでPersonalを選択して次に進むとProjects選択画面に移動する。  
 ## 2. Oculus Goの開発者モードの設定およびPCへの接続
-    [Oculus開発者ダッシュボード](https://dashboard.oculus.com/organization/create/)でOculusアカウントを作成して開発元の団体名登録して規約に同意する。  
-    スマホにOculusアプリをダウンロードしてログイン。  
-    Oculusアプリから設定→その他の設定→開発者モードで開発者モードをオンにする。
-    その後、PCにUSBケーブルを使って接続する。
+[Oculus開発者ダッシュボード](https://dashboard.oculus.com/organization/create/)でOculusアカウントを作成して開発元の団体名登録して規約に同意する。  
+スマホにOculusアプリをダウンロードしてログイン。  
+Oculusアプリから設定→その他の設定→開発者モードで開発者モードをオンにする。
+その後、PCにUSBケーブルを使って接続する。
 ## 3. ゲームのプロジェクトダウンロード  
 <https://github.com/igakilab/Onhold>からデータをcloneする。  
 ## 4. JDK(Java Development Kit)とSDKのダウンロード
