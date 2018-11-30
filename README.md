@@ -34,7 +34,7 @@ Oculusアプリから設定→その他の設定→開発者モードで開発�
 ### 5-1. プロジェクト作成
 Projects選択画面から右上にある「Open」を選択、「<<ダウンロードしてきたフォルダ>>→OnHold」へ進み、フォルダ選択で「VRrhythmGame」を選択する。
 ### 5-2. SDKとJDKのパスを通す
-メニューバーから「Edit」「Preferences」を選択。External Toolsへ行き、下にあるAndroidの項目にあるSDKとJDKに、3.でダウンロードしたJDKとSDKを設定する。
+メニューバーから「Edit」「Preferences」を選択。External Toolsへ行き、下にあるAndroidの項目にあるSDKとJDKに、3.でダウンロードしたJDKとSDKを設定する。  
 SDKのpath例「C:\Users\<<ユーザー名>>\AppData\Local\Android\Sdk」  
 JDKのpath例「C:\Program Files\Android\Android Stuido\jre」(jreになっているがJDKである)  
 ### 5-3. ゲームのビルドと実行
